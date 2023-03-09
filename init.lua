@@ -24,7 +24,7 @@ vim.opt.termguicolors = true
 vim.opt.updatetime = 300
 vim.opt.wrap = false
 
-vim.keymap.set("n", "J", ":m >+1<CR>gv=gv")
-vim.keymap.set("n", "K", ":m >-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.cmd("colorscheme neovim_purple")

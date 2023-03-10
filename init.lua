@@ -13,6 +13,7 @@ vim.opt.colorcolumn = { 80, 100 }
 vim.opt.completeopt = { "menu", "menuone" ,"preview", "noinsert", "noselect" }
 vim.opt.encoding = "utf-8"
 vim.opt.formatoptions:remove { "c", "r", "o" }
+vim.opt.guicursor  = {}
 vim.opt.hlsearch = false
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Relative line numbers

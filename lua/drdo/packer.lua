@@ -13,6 +13,7 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
  
   use 'tpope/vim-sleuth' -- Heuristic indent size
+  use 'tpope/vim-abolish' -- Smart case susbstitution, snake/camel/etc coercion
 
   use { -- Fuzzy finder over lists
     'nvim-lua/telescope.nvim',

@@ -1,6 +1,7 @@
 require'lspconfig'.rust_analyzer.setup{} -- Rust
 require'lspconfig'.jdtls.setup{} -- Java
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.tsserver.setup{} -- Typescript/Javascript/React
+require'lspconfig'.html.setup{} -- HTML, CSS
 
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = {"*.daml"},

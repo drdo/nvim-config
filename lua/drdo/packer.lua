@@ -61,6 +61,8 @@ require('packer').startup(function(use)
 
   use 'numToStr/Comment.nvim' -- Toggle comments
 
+  use 'RRethy/vim-illuminate' -- Highlight word under cursor
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

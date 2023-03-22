@@ -63,6 +63,8 @@ require('packer').startup(function(use)
 
   use 'RRethy/vim-illuminate' -- Highlight word under cursor
 
+  use 'wellle/targets.vim' -- More targets for around/inside etc
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

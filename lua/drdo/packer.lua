@@ -59,7 +59,7 @@ require('packer').startup(function(use)
 
   use 'folke/which-key.nvim' -- Popup with help in pending mode
 
-  use 'numToStr/Comment.nvim' -- Toggle comments
+  use 'numToStr/Comment.nvim' -- Comment code
 
   use 'RRethy/vim-illuminate' -- Highlight word under cursor
 

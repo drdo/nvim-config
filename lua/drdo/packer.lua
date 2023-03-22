@@ -55,6 +55,7 @@ require('packer').startup(function(use)
   }
 
   use 'yeddaif/neovim-purple' -- Purple theme
+  use 'folke/tokyonight.nvim' -- Tokyonight themes
 
   use 'folke/which-key.nvim' -- Popup with help in pending mode
 

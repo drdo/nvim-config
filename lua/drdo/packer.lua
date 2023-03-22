@@ -56,18 +56,7 @@ require('packer').startup(function(use)
 
   use 'yeddaif/neovim-purple' -- Purple theme
 
-  use { -- Popup with help in pending mode
-    "folke/which-key.nvim",
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 0
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  use 'folke/which-key.nvim' -- Popup with help in pending mode
 
   use 'numToStr/Comment.nvim' -- Toggle comments
 

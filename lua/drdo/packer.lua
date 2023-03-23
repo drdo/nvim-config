@@ -54,8 +54,10 @@ require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim'
   }
 
-  use 'yeddaif/neovim-purple' -- Purple theme
-  use 'folke/tokyonight.nvim' -- Tokyonight themes
+  -- Themes
+  -- use 'folke/tokyonight.nvim'
+  -- use 'nyoom-engineering/oxocarbon.nvim'
+  use 'Mofiqul/vscode.nvim'
 
   use 'folke/which-key.nvim' -- Popup with help in pending mode
 

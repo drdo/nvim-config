@@ -69,6 +69,8 @@ require('packer').startup(function(use)
 
   use 'tpope/vim-surround' -- Change surroundings
 
+  use("gbprod/yanky.nvim") -- Yank ring
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

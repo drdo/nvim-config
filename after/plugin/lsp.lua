@@ -1,8 +1,3 @@
-require'lspconfig'.rust_analyzer.setup{} -- Rust
-require'lspconfig'.jdtls.setup{} -- Java
-require'lspconfig'.tsserver.setup{} -- Typescript/Javascript/React
-require'lspconfig'.html.setup{} -- HTML, CSS
-
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = {"*.daml"},
   callback = function(ev)
@@ -33,4 +28,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>[', vim.diagnostic.goto_prev)
     vim.keymap.set('n', '<leader>]', vim.diagnostic.goto_next)
   end,
+})
+
+
+require'lspconfig'.jdtls.setup{} -- Java
+require'lspconfig'.tsserver.setup{} -- Typescript/Javascript/React
+require'lspconfig'.html.setup{} -- HTML, CSS
+
+-- Rust
+local rt = require("rust-tools")
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
 })

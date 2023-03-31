@@ -18,8 +18,8 @@ require('packer').startup(function(use)
   use { -- Fuzzy finder over lists
     'nvim-lua/telescope.nvim',
     requires = {
-      use 'nvim-lua/plenary.nvim',
-      use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }, -- Make telescope sorting go brr
+      'nvim-lua/plenary.nvim',
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }, -- Make telescope sorting go brr
     }
   }
 
@@ -31,6 +31,12 @@ require('packer').startup(function(use)
   }
 
   use 'neovim/nvim-lspconfig' -- LSP Configs
+  use { -- Rust setup
+    'simrat39/rust-tools.nvim',
+    requires = {
+      'neovim/nvim-lspconfig'
+    }
+  }
 
   use 'hrsh7th/nvim-cmp' -- Completion framework
   -- nvim-cmp completion sources

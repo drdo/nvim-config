@@ -1,4 +1,12 @@
 require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-p>"] = require('telescope.actions').cycle_history_prev,
+        ["<C-n>"] = require('telescope.actions').cycle_history_next
+      },
+    },
+  },
   extensions = {
     fzf = {
       fuzzy = true

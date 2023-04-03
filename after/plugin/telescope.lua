@@ -21,7 +21,15 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 
-vim.keymap.set('n', '<leader>f', ':lua require"telescope.builtin".find_files()<CR>')
-vim.keymap.set('n', '<leader>s', ':lua require"telescope.builtin".live_grep()<CR>')
-vim.keymap.set('n', '<leader>h', ':lua require"telescope.builtin".help_tags()<CR>')
-vim.keymap.set('n', '<leader>b', ':lua require"telescope.builtin".buffers()<CR>')
+vim.keymap.set('n', '<leader>f',
+  require"telescope.builtin".find_files,
+  { desc = "Find files (Telescope)" })
+vim.keymap.set('n', '<leader>s',
+  require"telescope.builtin".live_grep,
+  { desc = "Live grep (Telescope)" })
+vim.keymap.set('n', '<leader>h',
+  require"telescope.builtin".help_tags,
+  { desc = "Help tags (Telescope)" })
+vim.keymap.set('n', '<leader>b',
+  require"telescope.builtin".buffers,
+  { desc = "Buffers (Telescope)" })

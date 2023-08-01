@@ -21,15 +21,35 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 
+local telescope = require("telescope.builtin")
+
+function current_buffer_directory()
+  local path = vim.fn.expand('%:p:h')
+  if path == "" then
+    return vim.b[0].netrw_curdir 
+  else
+    return path
+  end
+end
+
 vim.keymap.set('n', '<leader>f',
-  require"telescope.builtin".find_files,
+  telescope.find_files,
   { desc = "Find files (Telescope)" })
+vim.keymap.set('n', '<leader>F',
+  function() telescope.find_files { cwd = current_buffer_directory() } end,
+  { desc = "Find files (Telescope)" })
+
 vim.keymap.set('n', '<leader>s',
-  require"telescope.builtin".live_grep,
+  telescope.live_grep,
   { desc = "Live grep (Telescope)" })
+vim.keymap.set('n', '<leader>S',
+  function() telescope.live_grep { cwd = current_buffer_directory() } end,
+  { desc = "Live grep (Telescope)" })
+
 vim.keymap.set('n', '<leader>h',
-  require"telescope.builtin".help_tags,
+  telescope.help_tags,
   { desc = "Help tags (Telescope)" })
+
 vim.keymap.set('n', '<leader>b',
-  require"telescope.builtin".buffers,
+  telescope.buffers,
   { desc = "Buffers (Telescope)" })

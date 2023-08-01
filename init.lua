@@ -15,6 +15,7 @@ vim.opt.encoding = "utf-8"
 vim.opt.formatoptions:remove { "c", "r", "o" }
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
+vim.g.netrw_keepdir = false
 vim.opt.number = true -- Show line numbers
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.scrolloff = 8

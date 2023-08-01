@@ -23,13 +23,6 @@ require('packer').startup(function(use)
     }
   }
 
-  use { -- File browser
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-  }
-
   use 'neovim/nvim-lspconfig' -- LSP Configs
   use { -- Rust setup
     'simrat39/rust-tools.nvim',

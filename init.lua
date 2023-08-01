@@ -23,7 +23,6 @@ vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.updatetime = 300
-vim.opt.wrap = false
 
 vim.g.mapleader = " "
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

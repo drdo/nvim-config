@@ -35,15 +35,9 @@ end
 vim.keymap.set('n', '<leader>f',
   telescope.find_files,
   { desc = "Find files (Telescope)" })
-vim.keymap.set('n', '<leader>F',
-  function() telescope.find_files { cwd = current_buffer_directory() } end,
-  { desc = "Find files (Telescope)" })
 
 vim.keymap.set('n', '<leader>s',
   telescope.live_grep,
-  { desc = "Live grep (Telescope)" })
-vim.keymap.set('n', '<leader>S',
-  function() telescope.live_grep { cwd = current_buffer_directory() } end,
   { desc = "Live grep (Telescope)" })
 
 vim.keymap.set('n', '<leader>h',

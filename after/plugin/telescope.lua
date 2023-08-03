@@ -23,15 +23,6 @@ require('telescope').load_extension('fzf')
 
 local telescope = require("telescope.builtin")
 
-function current_buffer_directory()
-  local path = vim.fn.expand('%:p:h')
-  if path == "" then
-    return vim.b[0].netrw_curdir 
-  else
-    return path
-  end
-end
-
 vim.keymap.set('n', '<leader>f',
   telescope.find_files,
   { desc = "Find files (Telescope)" })

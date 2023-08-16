@@ -34,6 +34,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 require'lspconfig'.jdtls.setup{} -- Java
 require'lspconfig'.tsserver.setup{} -- Typescript/Javascript/React
 require'lspconfig'.html.setup{} -- HTML, CSS
+require'lspconfig'.pyright.setup{} -- Python
 
 -- Rust
 local rt = require("rust-tools")

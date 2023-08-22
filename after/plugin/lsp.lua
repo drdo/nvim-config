@@ -40,6 +40,13 @@ require'lspconfig'.pyright.setup{} -- Python
 local rt = require("rust-tools")
 rt.setup({
   server = {
+    settings = {
+      ['rust-analyzer'] = {
+        diagnostics = {
+          disabled = {"inactive-code"},
+        },
+      },
+    },
     on_attach = function(_, bufnr)
       -- Hover actions
       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })

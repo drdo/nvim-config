@@ -43,11 +43,6 @@ require('packer').startup(function(use)
 
   use 'nvim-treesitter/nvim-treesitter' -- Tree sitter
 
-  use { -- Fancy status line
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
   use { -- Magit clone
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim'

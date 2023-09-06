@@ -28,10 +28,13 @@ vim.g.mapleader = " "
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.cmd("colorscheme vscode")
 vim.api.nvim_create_autocmd("ColorScheme", {
-    pattern = "vscode",
     callback = function()
+        vim.cmd("hi StatusLine guibg=#cccccc")
+        vim.cmd("hi StatusLineNC guibg=#eeeeee")
+        vim.cmd("hi StatusLine guibg=#ff0000")
+        vim.cmd("hi StatusLineNC guibg=#00ff00")
         vim.cmd("hi netrwMarkFile guibg=#efb2ff")
     end,
 })
+vim.cmd("colorscheme vscode")

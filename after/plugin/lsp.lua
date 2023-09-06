@@ -42,8 +42,11 @@ rt.setup({
   server = {
     settings = {
       ['rust-analyzer'] = {
-        diagnostics = {
-          disabled = {"inactive-code"},
+        -- diagnostics = {
+        --   disabled = {"inactive-code"},
+        -- },
+        cargo = {
+          allFeatures = true,
         },
       },
     },

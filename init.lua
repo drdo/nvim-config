@@ -611,6 +611,7 @@ require('lazy').setup({
             enable = true,
           },
         },
+        ansiblels = {},
       }
 
       -- Ensure the servers and tools above are installed

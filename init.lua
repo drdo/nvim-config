@@ -241,7 +241,13 @@ require('lazy').setup({
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',
+    lazy = false,
+    opts = {},
+    config = function()
+      require('Comment.ft').set('daml', {'--%s', '{-%s-}'})
+    end
+  },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
@@ -910,5 +916,38 @@ require('lazy').setup({
   },
 })
 
+
+-- DAML
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = {"*.daml"},
+  callback = function(ev)
+    vim.api.nvim_set_option_value("filetype", "daml", { buf = ev.buf })
+  end
+})
+vim.api.nvim_create_autocmd({"FileType"}, {
+  pattern = {"daml"},
+  callback = function(ev)
+    vim.lsp.start({
+      name = 'daml',
+      cmd = {'daml', 'damlc', 'ide'},
+      root_dir = vim.fs.dirname(vim.fs.find({'daml.yaml'}, { upward = true })[1]),
+    })
+  end
+})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local opts = { buffer = args.buf }
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+    vim.keymap.set('n', '<leader>d', ":lua require('telescope.builtin').diagnostics()<CR>")
+    vim.keymap.set('n', '<leader>[', vim.diagnostic.goto_prev)
+    vim.keymap.set('n', '<leader>]', vim.diagnostic.goto_next)
+  end,
+})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

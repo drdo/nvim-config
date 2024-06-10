@@ -623,6 +623,7 @@ require('lazy').setup({
             enable = true,
           },
         },
+        gopls = {},
         ansiblels = {},
         html = {},
       }
